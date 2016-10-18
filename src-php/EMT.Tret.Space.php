@@ -58,7 +58,12 @@ class EMT_Tret_Space extends EMT_Tret
 				'description'	=> 'Пробел после знаков троеточий с вопросительным или восклицательными знаками',
 				'pattern' 		=> '/([\?\!]\.\.)([а-яёa-z])/iu', 
 				'replacement' 	=> '\1 \2'
-			),	
+			),
+		'autospace_after_number'      => array(
+				'description'    => 'Неразрывный пробел после цифры',
+				'pattern'                     =>'/(\d)(\s)+/',
+				'replacement' => '\1&nbsp;'
+			),
 		'many_spaces_to_one' => array(
 				'description'	=> 'Удаление лишних пробельных символов и табуляций',
 				'pattern' 		=> '/(\040|\t)+/', 
