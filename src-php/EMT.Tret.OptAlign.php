@@ -27,7 +27,7 @@ class EMT_Tret_OptAlign extends EMT_Tret
 	public $rules = array(	
 		'oa_oquote' => array(
 				'description'	=> 'Оптическое выравнивание открывающей кавычки',
-				//'disabled'      => true,	
+				'disabled'      => true,	
 				'pattern' 		=> array(
 							'/([a-zа-яё\-]{3,})(\040|\&nbsp\;|\t)(\&laquo\;)/uie',
 							'/(\n|\r|^)(\&laquo\;)/ei'
