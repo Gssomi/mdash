@@ -111,6 +111,17 @@ class EMT_Tret_Nobr extends EMT_Tret
 				'pattern' 		=> '/(\&nbsp\;|\s|\>|^)([a-zа-яё]+)((\-([a-zа-яё]+)){1,2})(\s|\.|\,|\!|\?|\&nbsp\;|\&hellip\;|$)/uie',
 				'replacement' 	=> '$m[1] . $this->tag($m[2].$m[3], "span", array("class"=>"nowrap")) . $m[6]'
 			),
+		'nbsp_between_initials' => array(
+				'description'     => 'Неразрывный пробел между инициалами',
+				'pattern'             => array(
+							'/([A-Za-zа-яА-Я]{2,10})( |\&nbsp\;)([A-ZА-Я]{1})\.( |\&nbsp\;)([A-ZА-Я]{1})\./u',
+							'/([A-ZА-Я]{1})\.( |\&nbsp\;)([A-ZА-Я]{1})\.( |\&nbsp\;)/u',
+						),
+				'replacement'  => array(
+							'\1&nbsp\3.&nbsp\5.',
+							'\1.&nbsp\3.&nbsp;',							
+						), 
+			),
 		);
 		
 	/**
