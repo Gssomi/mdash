@@ -116,10 +116,14 @@ class EMT_Tret_Nobr extends EMT_Tret
 				'pattern'             => array(
 							'/([A-Za-zа-яА-Я]{2,10})( |\&nbsp\;)([A-ZА-Я]{1})\.( |\&nbsp\;)([A-ZА-Я]{1})\./u',
 							'/([A-ZА-Я]{1})\.( |\&nbsp\;)([A-ZА-Я]{1})\.( |\&nbsp\;)/u',
+							'/([A-ZА-Я]{1})\.( |\&nbsp\;)([A-ZА-Яa-zа-я]{1,})/u',
+							'/([A-ZА-Яa-zа-я]{1,})( |\&nbsp\;)([A-ZА-Я]{1})\./u',
 						),
-				'replacement'  => array(
+				'replacement' => array(
 							'\1&nbsp\3.&nbsp\5.',
-							'\1.&nbsp\3.&nbsp;',							
+							'\1.&nbsp\3.&nbsp;',
+							'\1.&nbsp\3',
+							'\1&nbsp\3.',	
 						), 
 			),
 		);
